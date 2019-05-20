@@ -30,18 +30,18 @@ window.onload = function () {
 
 
     function startGame() {
-        resetScoreAndTime();
-        peep();
-
-        setTimeout(() => {
-            // TODO: 写当游戏时间结束后要发生的事
-            //1.标题变为‘timeup！+ score’
-            //2.显示按钮变为replay！
+        resetScoreAndTime();//游戏初始化设置
+        peep();//老鼠出洞
+        //箭头函数
+        //setTimeout(JavaScript 函数, 等待的毫秒数)
+        score = 0;
+        timeUp = false;
+        setTimeout(function(){
             timeUp = true;
             titleH1.innerText = 'TIME UP!';
             startBtn.innerText = 'Replay!';
             startBtn.style.display = 'inline-block';
-        }, gameTime)
+        },10000);    
     }
 
     /**
@@ -51,9 +51,8 @@ window.onload = function () {
         // TODO: 写游戏的初始化设置
         //对每个洞初始化
         titleH1.innerHTML = 'WHACK-A-MOLE!';
-        score = 0;
-        scoreBoard.innerHTML = score;
-        timeUp = false;
+        scoreBoard.textContent = 0;        
+        setTimeout(() => timeUp = true,10000);
     }
 
     /**
