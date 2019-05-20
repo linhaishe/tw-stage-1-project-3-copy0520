@@ -49,6 +49,11 @@ window.onload = function () {
      */
     function resetScoreAndTime() {
         // TODO: 写游戏的初始化设置
+        //对每个洞初始化
+        titleH1.innerHTML = 'WHACK-A-MOLE!';
+        score = 0;
+        scoreBoard.innerHTML = score;
+        timeUp = false;
     }
 
     /**
