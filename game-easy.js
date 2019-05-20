@@ -6,10 +6,10 @@ window.onload = function () {
     const startBtn = document.getElementById('start_btn');
     let titleH1 = document.getElementById('title');
 
-    let lastHole;
-    let timeUp = false;
-    let score = 0;
-    let gameTime = 10000;
+    let lastHole;//上一个洞口
+    let timeUp = false;//游戏时间超时
+    let score = 0;//游戏总分数
+    let gameTime = 10000;//游戏时间
 
 
     startBtn.addEventListener('click', function () {
@@ -35,6 +35,12 @@ window.onload = function () {
 
         setTimeout(() => {
             // TODO: 写当游戏时间结束后要发生的事
+            //1.标题变为‘timeup！+ score’
+            //2.显示按钮变为replay！
+            timeUp = true;
+            titleH1.innerText = 'TIME UP!';
+            startBtn.innerText = 'Replay!';
+            startBtn.style.display = 'inline-block';
         }, gameTime)
     }
 
