@@ -115,7 +115,23 @@ window.onload = function () {
      * 打地鼠。为每个moles添加点击事件，点击后分数显示+1，地鼠入洞。
      */
     moles.forEach(mole => mole.addEventListener('click', function (e) {
+        //JavaScript forEach() 方法
         // TODO: 在这里写用户点击地鼠发生的事.
-    }));
+        //if(timeUp==false){
+            //alert("Please Start Game !");
+           // return;
+        //}
+       // else{
+            //if(document.getElementsByClassName("hole["+current+"]").innerHtml !=""){
+                //score += 1;
+                //scoreBoard.textContent = score;
+                //document.getElementsByClassName("hole["+current+"]")//.innerHtml = '<img src="whack-a-mole\mole.svg">';
+           // }
 
+        //}
+        if(!e.isTrusted) return; // cheater
+        score ++;
+        this.classList.remove('up');
+        scoreBoard.textContent = score;
+    }));
 };
