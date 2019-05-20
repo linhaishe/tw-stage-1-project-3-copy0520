@@ -74,7 +74,8 @@ window.onload = function () {
      */
     function randomTime(min, max) {
         // TODO: 写生成随机数的逻辑，
-        return 0;
+        return Math.floor(Math.random()*(max-min))+min;
+        //return 0;
     }
 
     /**
